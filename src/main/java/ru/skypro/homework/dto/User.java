@@ -13,16 +13,14 @@ import javax.validation.constraints.Size;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Register {
+public class User {
+
+    private int id;
 
     @NotBlank(message = "Это поле не может быть пустым")
     @Size(min = 4, max = 32, message = "Логин должен содержать от 4 до 32 символов")
     @Email
-    private String username;
-
-    @NotBlank(message = "Это поле не может быть пустым")
-    @Size(min = 8, max = 16, message = "Пароль должен содержать от 8 до 16 символов")
-    private String password;
+    private String email;
 
     @NotBlank(message = "Это поле не может быть пустым")
     @Size(min = 2, max = 16, message = "Имя пользователя должно содержать не менее 2 и не более 16 символов")
@@ -38,5 +36,7 @@ public class Register {
     private String phone;
 
     private Role role;
+
+    private String image;
 
 }

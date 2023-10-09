@@ -2,7 +2,6 @@ package ru.skypro.homework.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -12,14 +11,14 @@ import javax.validation.constraints.Size;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Login {
-
-    @NotBlank(message = "Это поле не может быть пустым")
-    @Size(min = 4, max = 32, message = "Логин должен содержать от 4 до 32 символов")
-    @Email
-    private String username;
+public class NewPassword {
 
     @NotBlank(message = "Это поле не может быть пустым")
     @Size(min = 8, max = 16, message = "Пароль должен содержать от 8 до 16 символов")
-    private String password;
+    private String currentPassword;
+
+    @NotBlank(message = "Это поле не может быть пустым")
+    @Size(min = 8, max = 16, message = "Пароль должен содержать от 8 до 16 символов")
+    private String newPassword;
+
 }
